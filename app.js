@@ -9,6 +9,7 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var about = require('./routes/about');
+var contact = require('./routes/contact');
 
 //global.jquery = jQuery;
 //global.jQuery = require('jquery');
@@ -31,8 +32,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users);
-app.use('/about', about);
+app.use('/', users);
+app.use('/', about);
+app.use('/', contact);
 
 // catch 404 and forward to error handler
 
