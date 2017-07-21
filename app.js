@@ -4,19 +4,18 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-//var bootstrap = require('bootstrap');
+var pg = require('pg');
+
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 var about = require('./routes/about');
+var test = require('./routes/test');
 
-//global.jquery = jQuery;
-//global.jQuery = require('jquery');
-// global.jQuery = global.$ = require('jquery');
-// var $ = require('jquery');
-// require('bootstrap');
 
 var app = express();
+
+var conString = "postgres://fori:123456789@localhost/ictyouneed";
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -33,6 +32,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 app.use('/about', about);
+app.use('/test', test);
+
+
+app.get('/', function (req, res) {
+
+});
 
 // catch 404 and forward to error handler
 
