@@ -1,0 +1,85 @@
+
+<% include partials/header%>
+
+<div style="width: 80%; margin-left: 10%; margin-right: 10% ">
+
+    <div class="container-fluid bg-3 text-left">
+        <div class="row text-left" style="font-size: 12px">
+            <div class="col-sm-12" style="margin-top:15px">
+                <br/><br/>
+                <h1 style="color:#03a9f4; margin-left: -1%">CONTACT US</h1></div>
+            <div class="row text-left" style="font-size: 14px">
+                <div class="col-sm-6" style="margin: auto">
+                    <br/>
+                    <div id="map" style="width:500px;height:200px;background:lightgrey"></div>
+                    <script>
+
+                        function initMap() {
+                            var uluru = {lat: 41.33153, lng: 19.8182847};
+                            var map = new google.maps.Map(document.getElementById('map'), {
+                                zoom: 10,
+                                center: uluru
+                            });
+                            var marker = new google.maps.Marker({
+                                position: uluru,
+                                map: map
+                            });
+                        }
+                    </script>
+                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcmx64awhAsQ9LPXC3215wfTHvx_of5Vg&callback=initMap"></script>
+                    <!--<p>We want to improve our site in order to fill all your needs. <br/>Please send as a feedback and help us know what do you think.</p><br/><br/> -->
+                    <br/>
+                    <H4>TIMING</H4>
+                    <p>
+                        9 am to 6 pm<br/>
+                        Expect our response within 24 hours
+                    </p>
+                    <h4>ADDRESS</h4>
+                    <p>Rruga Barrikadave</p>
+                    <p>Pallati Delta</p>
+                    <p>Shkalla 1</p>
+                    <p>Tirane</p>
+                    <p>Albania</p>
+                    <a><img height="60px"
+                            src="https://cdn4.iconfinder.com/data/icons/evil-icons-user-interface/64/mail-128.png">contact@ambrogio.al
+                    </a><br/>
+                    <p><img height="60px" src="https://cdn0.iconfinder.com/data/icons/telephone-3/200/408-128.png"> 0422
+                        55555</p>
+                    <p><img height="60px"
+                            src="https://cdn4.iconfinder.com/data/icons/smartphone-states-vol-1-twotone/48/Paul-01-128.png">
+                        00355 68 25 25 000</p>
+
+                </div>
+                <div class="row text-left">
+                    <div class="col-sm-6">
+                        <img style="margin-left: -4%; margin-top: -5.1%" src="http://www.myiconfinder.com/uploads/iconsets/256-256-c5563e3060de2af5ef307bd337c611eb-email.png">
+
+                        <form style="width: 70%">
+
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter name"></div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" class="form-control" id="Lname" placeholder="email"></div>
+                            <div class="form-group">
+                                <label>Subject</label>
+                                <input type="text" class="form-control" id="subject" placeholder="subject"></div>
+                            <div class="form-group">
+                                <label>Leave your message</label>
+                                <textarea rows="10" cols="50"> message</textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" style="width: 25%" class="btn btn-default">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include partials/loginModal %>
+<% include partials/footer %>
