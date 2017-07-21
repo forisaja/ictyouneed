@@ -13,11 +13,6 @@ var about = require('./routes/about');
 var contact = require('./routes/contact');
 var test = require('./routes/test');
 
-//global.jquery = jQuery;
-//global.jQuery = require('jquery');
-// global.jQuery = global.$ = require('jquery');
-// var $ = require('jquery');
-// require('bootstrap');
 
 var app = express();
 
