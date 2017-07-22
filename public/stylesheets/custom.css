@@ -2,3 +2,43 @@
     padding-top: 100px;
 }
 */
+
+.slick-next {
+    right: -25px;
+}
+
+.slick-prev {
+    left: -25px;
+}
+
+
+
+.myclass-arrow-slider-left{
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    height: 20px;
+    margin-top: -10px;
+    padding: 0;
+    cursor: pointer;
+    color: black;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.myclass-arrow-slider {
+
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    height: 20px;
+    margin-top: -10px;
+    padding: 0;
+    cursor: pointer;
+    color: black;
+    border: none;
+    outline: none;
+    background: transparent;
+
+}
