@@ -12,11 +12,11 @@ var users = require('./routes/users');
 var about = require('./routes/about');
 var contact = require('./routes/contact');
 var test = require('./routes/test');
-
+var courses = require('./routes/courses');
 
 var app = express();
 
-var conString = "postgres://fori:123456789@localhost/ictyouneed";
+var conString = "postgres://fori:123456789@192.168.10.71:5432/ictyouneed";
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -35,7 +35,7 @@ app.use('/', users);
 app.use('/', about);
 app.use('/', contact);
 app.use('/', test);
-
+app.use('/', courses);
 
 app.get('/', function (req, res) {
 
