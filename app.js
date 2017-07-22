@@ -13,6 +13,7 @@ var about = require('./routes/about');
 var contact = require('./routes/contact');
 var test = require('./routes/test');
 var courses = require('./routes/courses');
+var uploadlesson = require('./routes/uploadlesson');
 
 var app = express();
 
@@ -36,6 +37,7 @@ app.use('/', about);
 app.use('/', contact);
 app.use('/', test);
 app.use('/', courses);
+app.use('/', uploadlesson);
 
 app.get('/', function (req, res) {
 
