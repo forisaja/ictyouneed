@@ -1,0 +1,111 @@
+
+<% include partials/header%>
+<style>
+    .row.content {height: 1500px}
+    .sidenav{
+        background-color: lightyellow;
+        height: 100%;
+        width: 17%;
+        padding: 30px;
+        margin-top: 150px;
+        margin-left: 30px;
+    }
+    .button2 {
+        background-color: white;
+        color: black;
+        border: 2px solid #008CBA;
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="row content">
+
+        <!-- Sidenav  -->
+        <div class="col-sm-3 sidenav">
+            <h1 class="text-center" style="font-family: 'Kalam', cursive">My certificates</h1>
+            <img class="img-responsive" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCAGU3dUDJwuiGweOSqWuSX0PeYXyRmmEHqkUNge46Rf0UA_rk" alt="Certificate of completion" width="100%">
+            <img class="img-responsive" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCAGU3dUDJwuiGweOSqWuSX0PeYXyRmmEHqkUNge46Rf0UA_rk" alt="Certificate of completion" width="100%">
+            <img class="img-responsive" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCAGU3dUDJwuiGweOSqWuSX0PeYXyRmmEHqkUNge46Rf0UA_rk" alt="Certificate of completion" width="100%">
+            <img class="img-responsive" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCAGU3dUDJwuiGweOSqWuSX0PeYXyRmmEHqkUNge46Rf0UA_rk" alt="Certificate of completion" width="100%">
+            <img class="img-responsive" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCAGU3dUDJwuiGweOSqWuSX0PeYXyRmmEHqkUNge46Rf0UA_rk" alt="Certificate of completion" width="100%">
+        </div>
+
+
+        <!-- Profile picture -->
+
+
+        <div class="col-sm-2" style="margin-top: 200px; margin-left: 50px">
+            <img src="http://itra.medialabasia.in/MIS/profile/co_pi_profile/member/default.png" alt="Profile picture" width="300px">
+        </div>
+
+
+        <!-- The data of the users -->
+
+        <div class="col-sm-4" style="margin-top: 200px; margin-left: 50px">
+            <h3>Jane Doe</h3>
+            <h3>janedoe@email.com</h3>
+            <h3>Front-end Developer at Ambrogio shpk</h3>
+            <h3>Tirane, Albania</h3>
+            <h3>29.02.1993</h3>
+            <h3>Private</h3>
+        </div>
+
+        <!-- Edit profile button and the rank-->
+
+
+        <div class="col-sm-8">
+            <button type="button" class="btn btn-default">Edit Profile</button>
+            <img src="https://cdn0.iconfinder.com/data/icons/super-mono-reflection/yellow/medal_yellow.png" alt="Student rank" style="margin-left: 250px"/>
+        </div>
+
+
+        <!-- Enrolled courses-->
+
+        <div class="col-sm-8">
+            <h1 style="margin-top: 30px; font-family: 'KacstArt', cursive">Enrolled Courses</h1>
+        </div>
+
+        <!-- Courses that the student has enrolled to-->
+
+
+        <div class="col-sm-6">
+            <div class="well " style="margin-right:700px"><img class="img-responsive"  src="https://vignette2.wikia.nocookie.net/logopedia/images/6/6a/Java-logo.jpg/revision/latest/scale-to-width-down/640?cb=20150321072347" alt="Student rank" width="100%">
+                <h4>JAVA Beginner</h4>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="70"aria-valuemin="0" aria-valuemax="100" style="width:70%"> 70%
+                    </div>
+                </div>
+                <a href="#" class="btn btn-info button2 button" role="button" >Feedback</a>
+            </div>
+        </div>
+        <div class="col-sm-6" >
+            <div class="well " style="margin-right:700px"><img class="img-responsive" src="http://www.soft-class.com/wp-content/uploads/2015/07/linux-admin.jpg" alt="Student rank" width="100%">
+                <h4>LINUX Beginner</h4>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                         aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                        70%
+                    </div>
+                </div>
+                <a href="#" class="btn btn-info button2 button" role="button" >Feedback</a>
+            </div>
+        </div>
+        <div class="col-sm-6" >
+        <div class="well " style="margin-right:700px"><img class="img-responsive" src="https://i.ytimg.com/vi/FQsBmnZvBdc/maxresdefault.jpg" alt="Student rank" width="100%">
+            <h4>GIT & GITHUB Beginner</h4>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                     aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                    70%
+                </div>
+            </div>
+            <a href="#" class="btn btn-info button2 button" role="button" >Feedback</a>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+<% include partials/loginModal %>
+<% include partials/footer %>
