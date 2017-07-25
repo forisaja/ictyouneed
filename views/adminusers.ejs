@@ -1,10 +1,10 @@
 <% include partials/header%>
 <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
 <style>
-    .row.content {height: 1500px}
+    .row.content {height: auto}
     .sidenav {
         background-color: whitesmoke;
-        height: 100%;
+        height: auto;
     }
 </style>
 
@@ -13,7 +13,7 @@
 <div class="container-fluid">
     <div class="row content"  style="margin-top: 8%; margin-left: 6%; margin-right: 8%">
         <div class="col-sm-3 sidenav jumbotron" >
-            <img src="https://www.infojobs.it/logo/logo/do-get.xhtml?id=4892987718&dgv=506969630811119956" class="img-rounded" alt="Admin profile picture" width="300" style=" margin-left: 0.1%">
+            <img src="images/ambrogio.png" class="img-rounded" alt="Admin profile picture" width="250" style=" margin-left: 0.1%">
             <ul class="nav nav-pills nav-stacked" style="margin-top: 10%; color: whitesmoke; font-family:Aclonica; font-size: 100% ">
                 <li><a href="#section1">Home</a></li>
                 <li><a href="#section3">Profile</a></li>
@@ -46,7 +46,7 @@
                                    <td><%= user.firstname + ' ' + user.lastname %></td>
                                    <td><%= user.email %></td>
                                    <td><%= user.role %></td>
-                                   <td><input type="checkbox" name="accountstatus" value="<%= user.account_status %>" data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
+                                   <td><input type="checkbox" <%= user.account_status ? "checked" : "" %> value="<%=user.account_status%>" name="accountstatus" data-toggle="toggle" data-onstyle="success" data-offstyle="danger" ></td>
                                </tr>
                            <% }) %>
 
@@ -71,3 +71,5 @@
         } );
 
     </script>
+
+
