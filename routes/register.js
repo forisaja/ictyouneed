@@ -22,4 +22,20 @@ router.get('/register', function(req, res) {
     });
 });
 
+router.post('/add', function(req, res) {
+    pg.connect(conString, function (err, client, done) {
+        if (err) {
+            return console.error('error fetching client from pool', err);
+        }
+        client.query("INSERT into public.user(firstname, lastname, email) VALUES ($1, $2, $3)", [req.body.firstname, req.body.lastname, req.body.email]);
+
+            //res.render('register', {users: result.rows, title: 'Register'});
+            //console.log(result.rows);
+            done();
+            res.redirect('/test');
+    });
+});
+
+
+
 module.exports = router;
