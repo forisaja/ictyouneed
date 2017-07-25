@@ -9,6 +9,7 @@ var pg = require('pg');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var users = require('./routes/users');
 var about = require('./routes/about');
 var contact = require('./routes/contact');
 var test = require('./routes/test');
@@ -19,8 +20,8 @@ var adminprofile = require('./routes/adminprofile');
 var coursepreview=require('./routes/coursepreview');
 //var lessonpreview=require('./routes/lessonpreview');
 var register = require('./routes/register');
-
-
+var adminusers = require('./routes/adminusers');
+var admincourse = require('./routes/admincourse');
 
 var app = express();
 
@@ -50,7 +51,8 @@ app.use('/', adminprofile);
 app.use('/', coursepreview);
 app.use('/', register);
 //app.use('/', lessonpreview);
-
+app.use('/', adminusers);
+app.use('/', admincourse);
 
 app.get('/', function (req, res) {
 
