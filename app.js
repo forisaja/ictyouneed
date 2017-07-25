@@ -14,14 +14,17 @@ var contact = require('./routes/contact');
 var test = require('./routes/test');
 var courses = require('./routes/courses');
 var uploadlesson = require('./routes/uploadlesson');
+var studentprofile = require('./routes/studentprofile');
+var adminprofile = require('./routes/adminprofile');
 var coursepreview=require('./routes/coursepreview');
+//var lessonpreview=require('./routes/lessonpreview');
 var register = require('./routes/register');
 
 
 
 var app = express();
 
-var conString = "postgres://fori:123456789@localhost/youneed";
+var conString = "postgres://fori:123456789@192.168.10.71:5432/ictyouneed";
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -42,8 +45,11 @@ app.use('/', contact);
 app.use('/', test);
 app.use('/', courses);
 app.use('/', uploadlesson);
+app.use('/', studentprofile);
+app.use('/', adminprofile);
 app.use('/', coursepreview);
 app.use('/', register);
+//app.use('/', lessonpreview);
 
 
 app.get('/', function (req, res) {

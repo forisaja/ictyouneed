@@ -1,0 +1,42 @@
+<% include partials/header%>
+<style>
+    .row.content {height: 1500px}
+    .sidenav {
+        background-color: whitesmoke;
+        height: 100%;
+    }
+</style>
+<div class="container-fluid">
+    <div class="row content"  style="margin-top: 8%; margin-left: 6%; margin-right: 8%">
+        <div class="col-sm-3 sidenav jumbotron" >
+            <img src="https://www.infojobs.it/logo/logo/do-get.xhtml?id=4892987718&dgv=506969630811119956" class="img-rounded" alt="Admin profile picture" width="300" style=" margin-left: 0.1%">
+            <ul class="nav nav-pills nav-stacked" style="margin-top: 10%; color: whitesmoke; font-family:Aclonica; font-size: 100% ">
+                <li class="active" ><a href="#section1">Home</a></li>
+                <li><a href="#section3">Profile</a></li>
+                <li><a href="#section3">Courses</a></li>
+                <li><a href="#section3">Users</a></li>
+            </ul><br>
+        </div>
+        <div class="col-sm-8 " style="margin-top: 0px">
+            <div class="row">
+                <div class="col-sm-5">
+                    <img src="http://www.cdn.innesvienna.net//Content/user-default.png" class="img-circle" alt="Admin profile picture" width="200" style="margin-top: 5%; margin-left: 20%">
+                </div>
+                <div class="col-sm-4" style="margin-top:30px ">
+                    <h3>Jane Doe</h3>
+                    <h3>janedoe@email.com</h3>
+                    <h3>Tirane, Albania</h3>
+                    <h3>12.5.1990</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3" style="margin-top: 50px; margin-left:100px">
+                    <button type="button" class="btn btn-default">Edit Profile</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include partials/loginModal %>
+<% include partials/footer %>
