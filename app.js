@@ -24,7 +24,7 @@ var admincourse = require('./routes/admincourse');
 
 var app = express();
 
-var conString = "postgres://fori:123456789@192.168.10.71:5432/ictyouneed";
+//var conString = "postgres://fori:123456789@192.168.10.71:5432/ictyouneed";
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

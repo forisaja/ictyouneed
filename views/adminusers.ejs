@@ -39,62 +39,16 @@
                                </tr>
                            </thead>
                            <tbody>
+                           <% users.forEach(function(user) { %>
                                <tr>
                                    <td>1</td>
-                                   <td>Desli Mane</td>
-                                   <td>deslimane@example.com</td>
-                                   <td>Instructor</td>
+                                   <td><%= user.firstname + " " + user.lastname %></td>
+                                   <td><%= user.email %></td>
+                                   <td><%= user.role %></td>
                                    <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
                                </tr>
-                               <tr>
-                                   <td>2</td>
-                                   <td>Timonela Fani</td>
-                                   <td>timonelafani@example.com</td>
-                                   <td>Student</td>
-                                   <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
-                               </tr>
-                           <tr>
-                               <td>3</td>
-                               <td>Malfor Saja</td>
-                               <td>malforsaja@example.com</td>
-                               <td>Instructor</td>
-                               <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
-                           </tr>
-                           <tr>
-                               <td>4</td>
-                               <td>Gentjana Muça</td>
-                               <td>gentjanamuça@example.com</td>
-                               <td>Strudent</td>
-                               <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
-                           </tr>
-                           <tr>
-                               <td>5</td>
-                               <td>Anxhela Mustafa</td>
-                               <td>anxhelamustafa@example.com</td>
-                               <td>Student</td>
-                               <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
-                           </tr>
-                           <tr>
-                               <td>6</td>
-                               <td>Andi Naçollari</td>
-                               <td>andinaçollari@example.com</td>
-                               <td>Instructor</td>
-                               <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
-                           </tr>
-                           <tr>
-                               <td>7</td>
-                               <td>Adelina Beqiri</td>
-                               <td>adelinabeqiri@example.com</td>
-                               <td>Instructor</td>
-                               <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
-                           </tr>
-                           <tr>
-                               <td>8</td>
-                               <td>Elvis Deda</td>
-                               <td>elvisdeda@example.com</td>
-                               <td>Student</td>
-                               <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
-                           </tr>
+
+                           <% }); %>
                            </tbody>
                        </table>
             </div>
