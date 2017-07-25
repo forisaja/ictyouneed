@@ -21,6 +21,7 @@ var lesson=require('./routes/lesson');
 var register = require('./routes/register');
 var adminusers = require('./routes/adminusers');
 var admincourse = require('./routes/admincourse');
+var welcomeinstructor = require('./routes/welcomeinstructor');
 
 var app = express();
 
@@ -53,7 +54,7 @@ app.use('/', register);
 app.use('/', adminusers);
 app.use('/', admincourse);
 app.use('/', lesson);
-
+app.use('/', welcomeinstructor);
 
 app.get('/', function (req, res) {
 
