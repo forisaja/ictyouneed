@@ -6,7 +6,7 @@ var pg = require('pg');
 var conString = "postgres://fori:123456789@localhost/youneed";
 
 /* GET about page. */
-router.get('/test', function(req, res) {
+router.get('/register', function(req, res) {
     pg.connect(conString, function (err, client, done) {
         if (err) {
             return console.error('error fetching client from pool', err);
@@ -15,7 +15,7 @@ router.get('/test', function(req, res) {
             if (err) {
                 return console.error('error runing query', err);
             }
-            res.render('test', {users: result.rows, title: 'Test'});
+            res.render('register', {users: result.rows, title: 'Register'});
             console.log(result.rows);
             done();
         });

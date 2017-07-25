@@ -15,7 +15,7 @@ var test = require('./routes/test');
 var courses = require('./routes/courses');
 var uploadlesson = require('./routes/uploadlesson');
 var coursepreview=require('./routes/coursepreview');
-//var lessonpreview=require('./routes/lessonpreview');
+var register = require('./routes/register');
 
 
 
@@ -43,7 +43,7 @@ app.use('/', test);
 app.use('/', courses);
 app.use('/', uploadlesson);
 app.use('/', coursepreview);
-//app.use('/', lessonpreview);
+app.use('/', register);
 
 
 app.get('/', function (req, res) {
