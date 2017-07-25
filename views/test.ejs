@@ -7,20 +7,22 @@
 
             <tr>
                 <h4>
-                <% recipes.forEach(function(recipe) { %>
-                <th><%= recipe.name %></th>
+                <% users.forEach(function(user) { %>
+                <th><%= user.user_id %></th>
                 <% }) %>
                 </h4>
             </tr>
-            <% recipes.forEach(function(recipe) { %>
+            <% users.forEach(function(user) { %>
             <tr>
                 <td>
-                    <%= recipe.ingredients %>
+                    <%= user.firstName %>
                 </td>
                 <td>
-                    <%= recipe.directions %>
+                    <%= user.lastName %>
                 </td>
-
+                <td>
+                    <%= user.email %>
+                </td>
             </tr>
             <% }) %>
         </table>
