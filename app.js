@@ -17,7 +17,7 @@ var uploadlesson = require('./routes/uploadlesson');
 var studentprofile = require('./routes/studentprofile');
 var adminprofile = require('./routes/adminprofile');
 var coursepreview=require('./routes/coursepreview');
-//var lessonpreview=require('./routes/lessonpreview');
+var lesson=require('./routes/lesson');
 var register = require('./routes/register');
 
 
@@ -49,7 +49,7 @@ app.use('/', studentprofile);
 app.use('/', adminprofile);
 app.use('/', coursepreview);
 app.use('/', register);
-//app.use('/', lessonpreview);
+app.use('/', lesson);
 
 
 app.get('/', function (req, res) {
