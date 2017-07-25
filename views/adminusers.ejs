@@ -1,5 +1,5 @@
 <% include partials/header%>
-
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
 <style>
     .row.content {height: 1500px}
     .sidenav {
@@ -28,7 +28,7 @@
             <div class="row">
                 <div class="col-sm-9 text-center jumbotron">
                     <h2>Users</h2>
-                       <table class="table table-bordered table-hover">
+                       <table class="table table-bordered table-hover" id="table_id">
                            <thead>
                                <tr>
                                    <th>S.No</th>
@@ -39,62 +39,17 @@
                                </tr>
                            </thead>
                            <tbody>
+
+                           <% users.forEach(function(user) { %>
                                <tr>
-                                   <td>1</td>
-                                   <td>Desli Mane</td>
-                                   <td>deslimane@example.com</td>
-                                   <td>Instructor</td>
-                                   <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
+                                   <td><%= counter++%></td>
+                                   <td><%= user.firstname + ' ' + user.lastname %></td>
+                                   <td><%= user.email %></td>
+                                   <td><%= user.role %></td>
+                                   <td><input type="checkbox" name="accountstatus" value="<%= user.account_status %>" data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
                                </tr>
-                               <tr>
-                                   <td>2</td>
-                                   <td>Timonela Fani</td>
-                                   <td>timonelafani@example.com</td>
-                                   <td>Student</td>
-                                   <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
-                               </tr>
-                           <tr>
-                               <td>3</td>
-                               <td>Malfor Saja</td>
-                               <td>malforsaja@example.com</td>
-                               <td>Instructor</td>
-                               <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
-                           </tr>
-                           <tr>
-                               <td>4</td>
-                               <td>Gentjana Muça</td>
-                               <td>gentjanamuça@example.com</td>
-                               <td>Strudent</td>
-                               <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
-                           </tr>
-                           <tr>
-                               <td>5</td>
-                               <td>Anxhela Mustafa</td>
-                               <td>anxhelamustafa@example.com</td>
-                               <td>Student</td>
-                               <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
-                           </tr>
-                           <tr>
-                               <td>6</td>
-                               <td>Andi Naçollari</td>
-                               <td>andinaçollari@example.com</td>
-                               <td>Instructor</td>
-                               <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
-                           </tr>
-                           <tr>
-                               <td>7</td>
-                               <td>Adelina Beqiri</td>
-                               <td>adelinabeqiri@example.com</td>
-                               <td>Instructor</td>
-                               <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
-                           </tr>
-                           <tr>
-                               <td>8</td>
-                               <td>Elvis Deda</td>
-                               <td>elvisdeda@example.com</td>
-                               <td>Student</td>
-                               <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
-                           </tr>
+                           <% }) %>
+
                            </tbody>
                        </table>
             </div>
@@ -104,5 +59,15 @@
     </div>
 </div>
 
+
 <% include partials/loginModal %>
 <% include partials/footer %>
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
+</div>
+    <script>
+
+        $(document).ready( function () {
+        $('#table_id').DataTable();
+        } );
+
+    </script>
