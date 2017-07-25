@@ -1,0 +1,108 @@
+<% include partials/header%>
+
+<style>
+    .row.content {height: 1500px}
+    .sidenav {
+        background-color: whitesmoke;
+        height: 100%;
+    }
+</style>
+
+<!-- Side navigation bar-->
+
+<div class="container-fluid">
+    <div class="row content"  style="margin-top: 8%; margin-left: 6%; margin-right: 8%">
+        <div class="col-sm-3 sidenav jumbotron" >
+            <img src="https://www.infojobs.it/logo/logo/do-get.xhtml?id=4892987718&dgv=506969630811119956" class="img-rounded" alt="Admin profile picture" width="300" style=" margin-left: 0.1%">
+            <ul class="nav nav-pills nav-stacked" style="margin-top: 10%; color: whitesmoke; font-family:Aclonica; font-size: 100% ">
+                <li><a href="#section1">Home</a></li>
+                <li><a href="#section3">Profile</a></li>
+                <li><a href="#section3">Courses</a></li>
+                <li class="active" ><a href="#section3">Users</a></li>
+            </ul><br>
+        </div>
+
+        <!-- Users table-->
+
+        <div class="col-sm-offset-1 col-sm-8 " style="margin-top: 0px">
+            <div class="row">
+                <div class="col-sm-9 jumbotron">
+                    <h2>Users</h2>
+                       <table class="table table-bordered table-hover">
+                           <thead>
+                               <tr>
+                                   <th>S.No</th>
+                                   <th>Name</th>
+                                   <th>e-mail</th>
+                                   <th>Role</th>
+                                   <th>Enable or Disable</th>
+                               </tr>
+                           </thead>
+                           <tbody>
+                               <tr>
+                                   <td>1</td>
+                                   <td>Desli Mane</td>
+                                   <td>deslimane@example.com</td>
+                                   <td>Instructor</td>
+                                   <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
+                               </tr>
+                               <tr>
+                                   <td>2</td>
+                                   <td>Timonela Fani</td>
+                                   <td>timonelafani@example.com</td>
+                                   <td>Student</td>
+                                   <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
+                               </tr>
+                           <tr>
+                               <td>3</td>
+                               <td>Malfor Saja</td>
+                               <td>malforsaja@example.com</td>
+                               <td>Instructor</td>
+                               <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
+                           </tr>
+                           <tr>
+                               <td>4</td>
+                               <td>Gentjana Muça</td>
+                               <td>gentjanamuça@example.com</td>
+                               <td>Strudent</td>
+                               <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
+                           </tr>
+                           <tr>
+                               <td>5</td>
+                               <td>Anxhela Mustafa</td>
+                               <td>anxhelamustafa@example.com</td>
+                               <td>Student</td>
+                               <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
+                           </tr>
+                           <tr>
+                               <td>6</td>
+                               <td>Andi Naçollari</td>
+                               <td>andinaçollari@example.com</td>
+                               <td>Instructor</td>
+                               <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
+                           </tr>
+                           <tr>
+                               <td>7</td>
+                               <td>Adelina Beqiri</td>
+                               <td>adelinabeqiri@example.com</td>
+                               <td>Instructor</td>
+                               <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
+                           </tr>
+                           <tr>
+                               <td>8</td>
+                               <td>Elvis Deda</td>
+                               <td>elvisdeda@example.com</td>
+                               <td>Student</td>
+                               <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
+                           </tr>
+                           </tbody>
+                       </table>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<% include partials/loginModal %>
+<% include partials/footer %>

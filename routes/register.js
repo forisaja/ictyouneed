@@ -27,8 +27,8 @@ router.post('/add', function(req, res) {
         if (err) {
             return console.error('error fetching client from pool', err);
         }
-        client.query("INSERT into public.user(firstname, lastname, email, password, location) VALUES ($1, $2, $3, $4, $5)",
-            [req.body.firstname, req.body.lastname, req.body.email, req.body.pass, req.body.loc]);
+        client.query("INSERT into public.user(firstname, lastname, email, password, role, location) VALUES ($1, $2, $3, $4, $5, $6)",
+            [req.body.firstname, req.body.lastname, req.body.email, req.body.pass, 'student', req.body.loc]);
 
             //res.render('register', {users: result.rows, title: 'Register'});
             //console.log(result.rows);
