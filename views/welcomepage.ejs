@@ -1,0 +1,53 @@
+<% include partials/header%>
+<style>
+    .row.content {height: auto}
+    .sidenav {
+        background-color: white;
+        height: auto;}
+
+</style>
+<div class="container-fluid">
+    <div class="row content"  style="margin-top: 8%; margin-left: 10%">
+
+        <div class="col-sm-4 sidenav" style="margin-top: 0px">
+            <div class="row">
+                <div class="col-sm-5">
+                    <img src="http://www.cdn.innesvienna.net//Content/user-default.png" class="img-circle" alt="Admin profile picture" width="140" style="margin-top: 5%; margin-left: 20%">
+                    <button  style="margin-top: 15px; margin-left:50px;  margin-right:100px" type="button" class="btn btn-default">Edit Profile</button>
+                </div>
+                <div class="col-sm-4" style="margin-top:30px ">
+                    <h5>Jane Doe</h5>
+                    <h5>janedoe@email.com</h5>
+                    <h5>Tirane, Albania</h5>
+                    <h5>12.5.1990</h5>
+                    <a><h5>Complete profile</h5></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row content"  style="margin-top: 2%; margin-left: 10%; margin-right: 10%">
+        <div class="col-sm-12 jumbotron " >
+<h4 class="text-center">This is a short preview that shows the structure of a lesson</h4>
+            <h3><strong>Course title:</strong> HTML &amp; CSS</h3>
+            <h3><strong>Course level:</strong> Beginner</h3>
+            <h3><strong>Lesson title: </strong> More on HTML Form controls </h3>
+            <h3> <strong>KeyWords:</strong></h3>
+            <p>  <strong>Multiple select box </strong>– allows users to select more than one option from a drop down list box.<br/>
+               <strong> File input box </strong>- allows users to upload a file (an image, video, mp3, PDF, etc).<br/>
+                <strong> Submit button</strong> – is used to send a form to the server.<br/>
+                <strong>  Image button</strong> – puts an image for the submit button.<br/>
+                <strong>  Hidden controls </strong>-  allows you to add values to forms that users cannot see.
+
+               </p>
+            <h3>    <strong>Introduction</strong></h3>
+            <p>In this lesson, you will learn more on form controls elements such as multiple select box, submit button, hidden controls, etc.<br/> You will also learn how to group form elements and how a form works.</p>
+<h3>   <strong>Body of the lesson</strong></h3>
+            <p> To start you need to enroll at least in one course</p>
+            <button style="margin-left: 40%; margin-right: 30%; width: 200px; " type="submit" id="submitbtn" class="btn btn-success" onclick="">Enroll a course</button>
+
+        </div>
+    </div></div>
+
+
+<% include partials/footer %>
