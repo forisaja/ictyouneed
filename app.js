@@ -19,13 +19,13 @@ var adminprofile = require('./routes/adminprofile');
 var coursepreview=require('./routes/coursepreview');
 var lesson=require('./routes/lesson');
 var register = require('./routes/register');
-var adminusers = require('./routes/adminusers');
-var admincourse = require('./routes/admincourse');
+var welcomepage = require('./routes/welcomepage');
 var welcomeinstructor = require('./routes/welcomeinstructor');
+
 
 var app = express();
 
-//var conString = "postgres://fori:123456789@192.168.10.71:5432/ictyouneed";
+var conString = "postgres://fori:123456789@192.168.10.71:5432/ictyouneed";
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -50,11 +50,9 @@ app.use('/', studentprofile);
 app.use('/', adminprofile);
 app.use('/', coursepreview);
 app.use('/', register);
-//app.use('/', lessonpreview);
-app.use('/', adminusers);
-app.use('/', admincourse);
 app.use('/', lesson);
 app.use('/', welcomeinstructor);
+app.use('/', welcomepage);
 
 app.get('/', function (req, res) {
 
