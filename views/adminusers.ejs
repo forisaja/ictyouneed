@@ -1,5 +1,5 @@
 <% include partials/header%>
-
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
 <style>
     .row.content {height: 1500px}
     .sidenav {
@@ -28,7 +28,7 @@
             <div class="row">
                 <div class="col-sm-9 jumbotron">
                     <h2>Users</h2>
-                       <table class="table table-bordered table-hover">
+                       <table class="table table-bordered table-hover" id="table_id">
                            <thead>
                                <tr>
                                    <th>S.No</th>
@@ -39,16 +39,17 @@
                                </tr>
                            </thead>
                            <tbody>
+
                            <% users.forEach(function(user) { %>
                                <tr>
-                                   <td>1</td>
-                                   <td><%= user.firstname + " " + user.lastname %></td>
+                                   <td><%= counter++%></td>
+                                   <td><%= user.firstname + ' ' + user.lastname %></td>
                                    <td><%= user.email %></td>
                                    <td><%= user.role %></td>
-                                   <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
+                                   <td><input type="checkbox" name="accountstatus" value="<%= user.account_status %>" data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
                                </tr>
+                           <% }) %>
 
-                           <% }); %>
                            </tbody>
                        </table>
             </div>
@@ -58,5 +59,15 @@
     </div>
 </div>
 
+
 <% include partials/loginModal %>
 <% include partials/footer %>
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
+</div>
+    <script>
+
+        $(document).ready( function () {
+        $('#table_id').DataTable();
+        } );
+
+    </script>
