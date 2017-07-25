@@ -17,6 +17,10 @@ var uploadlesson = require('./routes/uploadlesson');
 var studentprofile = require('./routes/studentprofile');
 var adminprofile = require('./routes/adminprofile');
 
+var coursepreview=require('./routes/coursepreview');
+var register = require('./routes/register');
+
+
 
 var app = express();
 
@@ -43,6 +47,9 @@ app.use('/', courses);
 app.use('/', uploadlesson);
 app.use('/', studentprofile);
 app.use('/', adminprofile);
+app.use('/', coursepreview);
+app.use('/', register);
+
 
 app.get('/', function (req, res) {
 
