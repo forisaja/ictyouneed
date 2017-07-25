@@ -9,7 +9,6 @@ var pg = require('pg');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var users = require('./routes/users');
 var about = require('./routes/about');
 var contact = require('./routes/contact');
 var test = require('./routes/test');
@@ -18,7 +17,7 @@ var uploadlesson = require('./routes/uploadlesson');
 var studentprofile = require('./routes/studentprofile');
 var adminprofile = require('./routes/adminprofile');
 var coursepreview=require('./routes/coursepreview');
-//var lessonpreview=require('./routes/lessonpreview');
+var lesson=require('./routes/lesson');
 var register = require('./routes/register');
 var adminusers = require('./routes/adminusers');
 var admincourse = require('./routes/admincourse');
@@ -53,6 +52,8 @@ app.use('/', register);
 //app.use('/', lessonpreview);
 app.use('/', adminusers);
 app.use('/', admincourse);
+app.use('/', lesson);
+
 
 app.get('/', function (req, res) {
 

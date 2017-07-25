@@ -15,13 +15,19 @@
             <% users.forEach(function(user) { %>
             <tr>
                 <td>
-                    <%= user.firstName %>
+                    <%= user.firstname %>
                 </td>
                 <td>
-                    <%= user.lastName %>
+                    <%= user.lastname %>
                 </td>
                 <td>
                     <%= user.email %>
+                </td>
+                <td>
+                    <%= user.role %>
+                </td>
+                <td>
+                    <%= user.location %>
                 </td>
             </tr>
             <% }) %>
