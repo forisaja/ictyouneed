@@ -16,7 +16,6 @@ var courses = require('./routes/courses');
 var uploadlesson = require('./routes/uploadlesson');
 var studentprofile = require('./routes/studentprofile');
 var adminprofile = require('./routes/adminprofile');
-
 var coursepreview=require('./routes/coursepreview');
 var register = require('./routes/register');
 
