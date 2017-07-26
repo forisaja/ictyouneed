@@ -25,26 +25,42 @@ router.get('/register', function(req, res) {
 
 router.post('/login', function (req, res) {
 
-    var email = req.body.email;
-    var pass = req.body.pass;
 
-    pg.connect(conString, function (err, client, done) {
-        if(err){
-            return console.error('Error in connection...', err);
-        }
-    })
-    session = req.session;
-    if (req.body.email == 'm.saja@gmail.com' && req.body.pass== 'admin'){
-        session.uniqueID = req.body.email;
-    }
-    // client.query("SELECT * from public.user where email=$3 and password=$4", [email, pass])
-    //     if (email == 'admin@gmail.com' && pass == 'admin') {
-    //         session.uniqueID = email;
-    //         //return console.error('error runing query', err);
+
+    // pg.connect(conString, function (err, client, done) {
+    //     if(err){
+    //         return console.error('Error in connection...', err);
     //     }
-    res.redirect('/adminprofile');
+    // })
+    // session = req.session;
+    // if (req.body.email == 'm.saja@gmail.com' && req.body.pass== 'admin'){
+    //     session.uniqueID = req.body.email;
+    //     res.redirect('/adminprofile');
+    // }
+    pg.connect(conString, function (err, client, done) {
+        client.query("SELECT email, password from public.user where email=$1 and password=$2", [req.body.email, req.body.pass], function (err, result) {
+            var user = result.rows[0];
+            console.log(user);
+
+            if (req.body.email == user.email && req.body.pass == user.password) {
+                console.log('test validation');
+                res.redirect('/adminprofile');
+            }
+
+            else {
+                res.redirect('/register');
+            }
+        })
+    })
 });
 
+
+// app.post('/login', passport.authenticate('local', { failureRedirect: '/login' }), function(req, res) {
+//
+//         res.redirect('/adminprofile');
+//
+//
+// });
 
 
 router.post('/add', function(req, res) {
