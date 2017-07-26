@@ -12,16 +12,8 @@
 
 <div class="container-fluid">
     <div class="row content"  style="margin-top: 8%; margin-left: 6%; margin-right: 8%">
-        <div class="col-sm-3 sidenav jumbotron" >
-            <img src="https://www.infojobs.it/logo/logo/do-get.xhtml?id=4892987718&dgv=506969630811119956" class="img-rounded" alt="Admin profile picture" width="300" style=" margin-left: 0.1%">
-            <ul class="nav nav-pills nav-stacked" style="margin-top: 10%; color: whitesmoke; font-family:Aclonica; font-size: 100% ">
-                <li><a href="#section1">Home</a></li>
-                <li><a href="#section3">Profile</a></li>
-                <li class="active"><a href="#section3">Courses</a></li>
-                <li ><a href="#section3">Users</a></li>
-            </ul><br>
-        </div>
 
+        <% include partials/adminsidebar%>
         <!-- Users table-->
 
         <div class="col-sm-offset-1 col-sm-8 " style="margin-top: 0px">
@@ -101,7 +93,7 @@
             </div>
             <div class="row">
                 <div class=" col-sm-9  text-center jumbotron">
-                    <a href="#">Upload a Course</a>
+                    <a href="/courses">Upload a Course</a>
                 </div>
             </div>
         </div>

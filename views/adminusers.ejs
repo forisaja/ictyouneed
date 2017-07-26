@@ -12,16 +12,8 @@
 
 <div class="container-fluid">
     <div class="row content"  style="margin-top: 8%; margin-left: 6%; margin-right: 8%">
-        <div class="col-sm-3 sidenav jumbotron" >
-            <img src="images/ambrogio.png" class="img-rounded" alt="Admin profile picture" width="250" style=" margin-left: 0.1%">
-            <ul class="nav nav-pills nav-stacked" style="margin-top: 10%; color: whitesmoke; font-family:Aclonica; font-size: 100% ">
-                <li><a href="#section1">Home</a></li>
-                <li><a href="#section3">Profile</a></li>
-                <li><a href="#section3">Courses</a></li>
-                <li class="active" ><a href="#section3">Users</a></li>
-            </ul><br>
-        </div>
 
+        <% include partials/adminsidebar%>
         <!-- Users table-->
 
         <div class="col-sm-offset-1 col-sm-8 " style="margin-top: 0px">
@@ -66,7 +58,9 @@
 <script>
 
     $(document).ready( function () {
-        $('#table_id').DataTable();
+        $('#table_id').DataTable({
+            "iDisplayLength": 25
+        });
 
         $('.status').on('change', function(e) {
             var status = $(this).prop("checked");

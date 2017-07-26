@@ -17,12 +17,13 @@ var uploadlesson = require('./routes/uploadlesson');
 var studentprofile = require('./routes/studentprofile');
 var adminprofile = require('./routes/adminprofile');
 var adminusers = require('./routes/adminusers');
+var admincourse = require('./routes/admincourse');
 var coursepreview=require('./routes/coursepreview');
 var lesson=require('./routes/lesson');
 var register = require('./routes/register');
 var welcomepage = require('./routes/welcomepage');
 var welcomeinstructor = require('./routes/welcomeinstructor');
-
+var instructorprofile = require('./routes/instructorprofile');
 
 var app = express();
 
@@ -50,11 +51,13 @@ app.use('/', uploadlesson);
 app.use('/', studentprofile);
 app.use('/', adminprofile);
 app.use('/', adminusers);
+app.use('/', admincourse);
 app.use('/', coursepreview);
 app.use('/', register);
 app.use('/', lesson);
 app.use('/', welcomeinstructor);
 app.use('/', welcomepage);
+app.use('/', instructorprofile);
 
 app.get('/', function (req, res) {
 
