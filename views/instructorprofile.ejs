@@ -19,28 +19,29 @@
 <div class="container-fluid">
     <div class="row content" style="margin-top: 10%; margin-left: 2%">
         <div class="col-sm-3 sidenav jumbotron" style="height: 100%;">
-            <h2 class="text-center" style="font-family: 'Kalam', cursive">My certificates</h2>
-            <img class="img-responsive" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCAGU3dUDJwuiGweOSqWuSX0PeYXyRmmEHqkUNge46Rf0UA_rk" alt="Certificate of completion" width="100%"><br><br>
-            <img class="img-responsive" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCAGU3dUDJwuiGweOSqWuSX0PeYXyRmmEHqkUNge46Rf0UA_rk" alt="Certificate of completion" width="100%"><br><br>
-            <img class="img-responsive" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCAGU3dUDJwuiGweOSqWuSX0PeYXyRmmEHqkUNge46Rf0UA_rk" alt="Certificate of completion" width="100%"><br><br>
+            <ul class="nav nav-pills nav-stacked">
+                <li class=" <%= title==='Instructor Profile' ? 'active' : ''  %>"><a href="/instructorprofile">Home</a></li>
+                <li class=" <%= title==='Courses' ? 'active' : ''  %>"><a href="/courses">Create Course</a></li>
+                <li class=" <%= title==='Lesson' ? 'active' : ''  %>"><a href="/uploadlesson">Create Lesson</a></li>
+            </ul><br>
         </div>
 
         <div class="row">
             <div class="col-sm-8">
                 <div class="row">
-                <div class="col-sm-2" style="width: 30%">
-                    <img src="http://itra.medialabasia.in/MIS/profile/co_pi_profile/member/default.png" alt="Profile picture" width="300px" class="img-responsive">
-                    <div class="col-sm-6" style="margin-top: 0px; margin-left: 100px;">
-                        <button type="button" class="btn btn-default " style="align-items: left">Edit Profile</button>
+                    <div class="col-sm-2" style="width: 30%">
+                        <img src="http://itra.medialabasia.in/MIS/profile/co_pi_profile/member/default.png" alt="Profile picture" width="300px" class="img-responsive">
+                        <div class="col-sm-6" style="margin-top: 0px; margin-left: 100px;">
+                            <button type="button" class="btn btn-default " style="align-items: left">Edit Profile</button>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-6" style="margin-top: 3%">
-                    <h3>Jane Doe</h3>
-                    <h3>janedoe@email.com</h3>
-                    <h3>Front-end Developer at Ambrogio shpk</h3>
-                    <h3>Tirane, Albania</h3>
-                    <h3>29.02.1993</h3>
-                </div>
+                    <div class="col-sm-6" style="margin-top: 3%">
+                        <h3>Jane Doe</h3>
+                        <h3>janedoe@email.com</h3>
+                        <h3>Front-end Developer at Ambrogio shpk</h3>
+                        <h3>Tirane, Albania</h3>
+                        <h3>29.02.1993</h3>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-5">
@@ -92,48 +93,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-5">
-                        <h1 style="margin-top: 30px; font-family: 'KacstArt', cursive">Recomended Courses</h1>
-
-                    </div>
-                </div>
-
-                <div class="row">
-
-                    <div class="col-sm-12">
-                        <div class="well col-sm-3 " >
-                            <div ><img class="img img-responsive"  src="https://vignette2.wikia.nocookie.net/logopedia/images/6/6a/Java-logo.jpg/revision/latest/scale-to-width-down/640?cb=20150321072347" alt="Student rank" width="100%">
-
-                            </div>
-                            <div class="col-sm-9"><h4>JAVA Beginner</h4></div>
-                            <div class="col-sm-offset-1 col-sm-2"><h4>$$$</h4></div>
-                        </div>
-
-                        <div class="well col-sm-3 " style="margin-left: 20px">
-                            <div><img class="img img-responsive" src="https://c1.staticflickr.com/6/5005/5372580945_2988198c90.jpg" alt="Student rank" width="100%">
-                                <div class="col-sm-9"><h4>HTML Beginner</h4></div>
-                                <div class="col-sm-offset-1 col-sm-2"><h4>$$$</h4></div>
-                            </div>
-                        </div>
 
 
-                        <div class="well col-sm-3 " style="margin-left: 20px">
-                            <div><img class="img img-responsive" src="https://c1.staticflickr.com/6/5005/5372580945_2988198c90.jpg" alt="Student rank" width="100%">
-                                <div class="col-sm-9"><h4>HTML Advanced</h4></div>
-                                <div class="col-sm-offset-1 col-sm-2"><h4>$$$</h4></div>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
-
-
-
     </div>
-    </div>
+
+
+
+</div>
+</div>
 
 
 

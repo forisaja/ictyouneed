@@ -18,13 +18,14 @@ var uploadlesson = require('./routes/uploadlesson');
 var studentprofile = require('./routes/studentprofile');
 var adminprofile = require('./routes/adminprofile');
 var adminusers = require('./routes/adminusers');
+var admincourse = require('./routes/admincourse');
 var coursepreview=require('./routes/coursepreview');
 var lesson=require('./routes/lesson');
 var register = require('./routes/register');
 var welcomepage = require('./routes/welcomepage');
 var welcomeinstructor = require('./routes/welcomeinstructor');
-
-
+var instructorprofile = require('./routes/instructorprofile');
+var catalog = require('./routes/catalog');
 var app = express();
 
 var conString = "postgres://fori:123456789@192.168.10.71:5432/youneed";
@@ -57,11 +58,15 @@ app.use('/', uploadlesson);
 app.use('/', studentprofile);
 app.use('/', adminprofile);
 app.use('/', adminusers);
+app.use('/', admincourse);
 app.use('/', coursepreview);
 app.use('/', register);
 app.use('/', lesson);
 app.use('/', welcomeinstructor);
 app.use('/', welcomepage);
+app.use('/', instructorprofile);
+app.use('/', catalog);
+
 
 app.get('/', function (req, res) {
 
