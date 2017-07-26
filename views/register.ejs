@@ -20,26 +20,13 @@
     <h3 class="slogan" style="font-size: 25px">From beginner to advanced </h3><br>
 
     <div class="row text-left"  >
-        <div class="col-sm-3" style="margin: auto">
-            <img src="http://qassoom.me/techie/wp-content/uploads/Introduction-to-Linux-OS-on-VMs-Cover.png" class="img-responsive" style="width:100%"  alt="Image">
-            <p>Course title</p>
-            <p>Course 1</p>
-        </div>
-        <div class="col-sm-3">
-            <img src="http://qassoom.me/techie/wp-content/uploads/Introduction-to-Linux-OS-on-VMs-Cover.png" class="img-responsive"  style="width:100%" alt="Image">
-            <p>Course title</p>
-            <p>Course 2</p>
-        </div>
-        <div class="col-sm-3">
-            <img src="http://qassoom.me/techie/wp-content/uploads/Introduction-to-Linux-OS-on-VMs-Cover.png" class="img-responsive" style="width:100%" alt="Image">
-            <p>Course title</p>
-            <p>Course 3</p>
-        </div>
-        <div class="col-sm-3">
-            <img src="http://qassoom.me/techie/wp-content/uploads/Introduction-to-Linux-OS-on-VMs-Cover.png"  class="img-responsive" style="width:100%" alt="Image">
-            <p>Course title</p>
-            <p>Course 4</p><br>
-        </div>
+        <% courses.forEach(function(course) { %>
+            <div class="col-sm-3" style="margin: auto">
+                <img src="<%= course.photo %>" class="img-responsive" style="width:100%"  alt="Image">
+                <div><%= course.title %></div>
+                <div><%= course.level %></div>
+            </div>
+        <% }) %>
         <div style=" margin:auto; display:block; text-align: center">
             <button style="width: 200px; " class="btn btn-default" >More Courses</button></div>
     </div>
