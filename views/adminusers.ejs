@@ -55,10 +55,20 @@
     <% include partials/footer %>
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
 </div>
+
 <script>
 
     $(document).ready( function () {
+
         $('#table_id').DataTable({
+//            "processing": true,
+//            "serverSide": true,
+//
+//            "ajax": {
+//                "url": "/adminusers",
+//                "type": "get",
+//                "datatype" : "json"
+//            },
             "iDisplayLength": 25
         });
 
@@ -71,7 +81,10 @@
             var id = $target.attr('data-id');
             $.ajax({
                 type:'POST',
-                url:'/activateuser/' + status + "/" + id
+                url:'/activateuser/' + status + "/" + id,
+                success: function (response) {
+                    console.log(response);
+                }
             });
         });
     });

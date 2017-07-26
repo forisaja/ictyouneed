@@ -7,7 +7,7 @@ var pg = require('pg');
 //     res.render('adminusers', {title: 'Admin Users'});
 // });
 
-var conString = "postgres://postgres:123456789@localhost/youneed";
+var conString = "postgres://fori:123456789@localhost/youneed";
 
 router.get('/adminusers', function(req, res) {
     pg.connect(conString, function (err, client, done) {
@@ -18,7 +18,7 @@ router.get('/adminusers', function(req, res) {
             if (err) {
                 return console.error('error runing query', err);
             }
-            res.render('adminusers', {users: result.rows, title: 'Users', counter: 1});
+            res.render('adminusers', {users: result.rows, title: 'Admin Users', counter: 1});
             console.log(result.rows);
             done();
         });
@@ -31,7 +31,7 @@ router.post('/activateuser/:st/:id', function(req, res) {
             return console.error('error fetching client from pool', err);
         }
         client.query('UPDATE public.user SET account_status=$1 WHERE user_id=$2', [req.params.st, req.params.id]);
-        res.send(req.params.st);
+        res.send('Account status changed');
         done();
     });
 });
