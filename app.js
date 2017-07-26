@@ -24,7 +24,7 @@ var register = require('./routes/register');
 var welcomepage = require('./routes/welcomepage');
 var welcomeinstructor = require('./routes/welcomeinstructor');
 var instructorprofile = require('./routes/instructorprofile');
-
+var catalog = require('./routes/catalog');
 var app = express();
 
 var conString = "postgres://fori:123456789@192.168.10.71:5432/ictyouneed";
@@ -58,6 +58,8 @@ app.use('/', lesson);
 app.use('/', welcomeinstructor);
 app.use('/', welcomepage);
 app.use('/', instructorprofile);
+app.use('/', catalog);
+
 
 app.get('/', function (req, res) {
 

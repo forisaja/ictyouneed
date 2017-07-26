@@ -7,7 +7,7 @@ var pg = require('pg');
 //     res.render('adminusers', {title: 'Admin Users'});
 // });
 
-var conString = "postgres://postgres:123456789@localhost/youneed";
+var conString = "postgres://postgres:genta_db@localhost/ictyouneed";
 
 router.get('/adminusers', function(req, res) {
     pg.connect(conString, function (err, client, done) {
