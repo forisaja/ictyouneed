@@ -28,48 +28,58 @@
             <div class="row">
                 <div class="col-sm-9 text-center jumbotron">
                     <h2>Users</h2>
-                       <table class="table table-bordered table-hover" id="table_id">
-                           <thead>
-                               <tr>
-                                   <th>S.No</th>
-                                   <th>Name</th>
-                                   <th>e-mail</th>
-                                   <th>Role</th>
-                                   <th>Enable or Disable</th>
-                               </tr>
-                           </thead>
-                           <tbody>
+                    <table class="table table-bordered table-hover" id="table_id">
+                        <thead>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Name</th>
+                            <th>e-mail</th>
+                            <th>Role</th>
+                            <th>Enable or Disable</th>
+                        </tr>
+                        </thead>
+                        <tbody>
 
-                           <% users.forEach(function(user) { %>
-                               <tr>
-                                   <td><%= counter++%></td>
-                                   <td><%= user.firstname + ' ' + user.lastname %></td>
-                                   <td><%= user.email %></td>
-                                   <td><%= user.role %></td>
-                                   <td><input type="checkbox" <%= user.account_status ? "checked" : "" %> value="<%=user.account_status%>" name="accountstatus" data-toggle="toggle" data-onstyle="success" data-offstyle="danger" ></td>
-                               </tr>
-                           <% }) %>
+                        <% users.forEach(function(user) { %>
+                        <tr>
+                            <td><%= counter++%></td>
+                            <td><%= user.firstname + ' ' + user.lastname %></td>
+                            <td><%= user.email %></td>
+                            <td><%= user.role %></td>
+                            <td><input class="status" data-id="<%= user.user_id %>" type="checkbox" <%= user.account_status ? "checked" : "" %> value="<%=user.account_status %>" name="accountstatus" data-toggle="toggle" data-onstyle="success" data-offstyle="danger" ></td>
+                        </tr>
+                        <% }) %>
 
-                           </tbody>
-                       </table>
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
 
         </div>
-
     </div>
-</div>
 
-
-<% include partials/loginModal %>
-<% include partials/footer %>
+    <% include partials/loginModal %>
+    <% include partials/footer %>
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
 </div>
-    <script>
+<script>
 
-        $(document).ready( function () {
+    $(document).ready( function () {
         $('#table_id').DataTable();
-        } );
 
-    </script>
+        $('.status').on('change', function(e) {
+            var status = $(this).prop("checked");
+            $(this).attr('checked', status);
+            $(this).val(status);
+            console.log(status);
+            $target = $(e.target);
+            var id = $target.attr('data-id');
+            $.ajax({
+                type:'POST',
+                url:'/activateuser/' + status + "/" + id
+            });
+        });
+    });
 
-
+</script>
