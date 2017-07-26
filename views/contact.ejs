@@ -1,5 +1,11 @@
 
 <% include partials/header%>
+<style>
+    address {
+        display: block;
+        font-style: italic;
+    }
+</style>
 
 <div style="width: 80%; margin-left: 10%; margin-right: 10% ">
 
@@ -29,25 +35,19 @@
                     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcmx64awhAsQ9LPXC3215wfTHvx_of5Vg&callback=initMap"></script>
                     <!--<p>We want to improve our site in order to fill all your needs. <br/>Please send as a feedback and help us know what do you think.</p><br/><br/> -->
                     <br/>
-                    <H4>TIMING</H4>
-                    <p>
-                        9 am to 6 pm<br/>
-                        Expect our response within 24 hours
-                    </p>
-                    <h4>ADDRESS</h4>
-                    <p>Rruga Barrikadave</p>
-                    <p>Pallati Delta</p>
-                    <p>Shkalla 1</p>
-                    <p>Tirane</p>
-                    <p>Albania</p>
-                    <a><img height="60px"
-                            src="https://cdn4.iconfinder.com/data/icons/evil-icons-user-interface/64/mail-128.png">contact@ambrogio.al
-                    </a><br/>
-                    <p><img height="60px" src="https://cdn0.iconfinder.com/data/icons/telephone-3/200/408-128.png"> 0422
-                        55555</p>
-                    <p><img height="60px"
-                            src="https://cdn4.iconfinder.com/data/icons/smartphone-states-vol-1-twotone/48/Paul-01-128.png">
-                        00355 68 25 25 000</p>
+                    <address>
+                        <strong>You can find us at:</strong> <br><br>
+                        Rruga Barrikadave <br>
+                        Pallati Delta<br>
+                        Shkalla 1<br>
+                        Tirane, Albania<br>
+                    </address>
+                    <h5><strong>Timing</strong></h5>
+                    <h6> 9 am to 6 pm<br/>
+                        Expect our response within 24 hours</h6><br><br>
+                    <a href="mailto:contact@ambrogio.al?Subject=Hello%20again" target="_top" class="glyphicon glyphicon-envelope"> contact@ambrogio.al</a><br/>
+                    <p class="glyphicon glyphicon-phone-alt"> 042255555</p><br>
+                    <p class="glyphicon glyphicon-phone"> 00355682525000</p>
 
                 </div>
                 <div class="row text-left">
@@ -67,7 +67,7 @@
                                 <input type="text" class="form-control" id="subject" placeholder="subject"></div>
                             <div class="form-group">
                                 <label>Leave your message</label>
-                                <textarea style="width: 70%" rows="10" id="msg" placeholder="message"></textarea>
+                                <textarea style="width: 100%" rows="10" id="msg" placeholder="message"></textarea>
                             </div>
                             <div class="form-group">
                                 <button type="submit" style="width: 25%" class="btn btn-default">Submit</button>
