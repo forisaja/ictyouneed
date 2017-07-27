@@ -5,7 +5,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 var pg = require('pg');
+
+
 
 
 var index = require('./routes/index');
@@ -67,6 +71,25 @@ app.use('/', welcomepage);
 app.use('/', instructorprofile);
 app.use('/', catalog);
 
+passport.use(new LocalStrategy(
+    function(username, password, done) {
+
+        console.log(username);
+        console.log(password);
+        return done(null, false);
+
+        client.query('select password from public.user where firstname = $1', [firstname], function (err, results, fields) {
+            if (err){
+                done(err)
+            };
+            if(results.length === 0){
+                done(null, false);
+            }
+
+            return done(null, 'testadmin');
+        });
+    }
+));
 
 app.get('/', function (req, res) {
 
