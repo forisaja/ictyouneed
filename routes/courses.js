@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var pg = require('pg');
-var conString = "postgres://postgres:123456789@localhost/youneed";
+var conString = "postgres://fori:123456789@localhost/youneed";
 
 /* GET about page. */
 router.get('/courses', function(req, res) {

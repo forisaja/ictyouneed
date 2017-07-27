@@ -3,7 +3,7 @@ var router = express.Router();
 var pg = require('pg');
 
 
-var conString = "postgres://postgres:123456789@localhost/youneed";
+var conString = "postgres://fori:123456789@localhost/youneed";
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
             if (err) {
                 return console.error('error runing query', err);
             }
-            res.render('register', {courses: result.rows, title: 'Register'});
+            res.render('index', {courses: result.rows, title: 'Home'});
             console.log(result.rows);
             done();
         });
