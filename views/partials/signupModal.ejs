@@ -8,7 +8,7 @@
             <div class="modal-body">
 
                 <!-- content goes here -->
-                <form method="post" action="/add">
+                <form method="post" action="<%= title==="Welcome Instructor" ? '/addInstructor' : '/add' %>">
                     <div class="form-group">
                         <label for="exampleInputEmail1">First Name</label>
                         <input type="text" class="form-control" name="firstname" id="name" placeholder="Enter name"></div>
