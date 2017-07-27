@@ -32,13 +32,21 @@ router.post('/login', function (req, res) {
     //     res.redirect('/adminprofile');
     // }
     pg.connect(conString, function (err, client, done) {
-        client.query("SELECT email, password from public.user where email=$1 and password=$2", [req.body.email, req.body.pass], function (err, result) {
+        client.query("SELECT email, password, role from public.user where email=$1 and password=$2", [req.body.email, req.body.pass], function (err, result) {
             var user = result.rows[0];
             console.log(user);
 
             if (req.body.email == user.email && req.body.pass == user.password) {
                 console.log('test validation');
-                res.redirect('/adminprofile');
+                //D
+                if(user.role == 'student') {
+                    res.redirect('/welcomepage');
+                } else if(user.role == 'instructor') {
+                    res.redirect('/instructorprofile');
+                } else {
+                    res.redirect('/adminprofile');
+                }
+                //D
             }
 
             else {

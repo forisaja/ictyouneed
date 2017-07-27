@@ -16,11 +16,11 @@ router.post('/addcourse', function(req, res) {
             return console.error('error fetching client from pool', err);
         }
         //console.log(req.body.accountstatus);
-        client.query("INSERT into public.course(title, level, category, description, course_status, id_instructor, photo) VALUES ($1, $2, $3, $4, $5, $6, $7)",
-            [req.body.title, 'Beginner', 'OOP', req.body.description, true, 4, '/coursephotos/2.jpg']);
+        client.query("INSERT into public.course(title, author, level, category, description, course_status, id_instructor, photo) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)",
+            [req.body.title, req.body.author, req.body.level, req.body.category, req.body.description, true, 4, '/coursephotos/3.jpg']);
         done();
         //res.send("blablablah");
-        res.redirect('/courses');
+        res.redirect('/uploadlesson');
     });
 });
 
