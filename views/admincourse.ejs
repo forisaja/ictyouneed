@@ -1,5 +1,5 @@
 <% include partials/header%>
-
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
 <style>
     .row.content {height: auto}
     .sidenav {
@@ -20,73 +20,28 @@
             <div class="row">
                 <div class="col-sm-9  text-center jumbotron">
                     <h2>Courses</h2>
-                    <table class="table table-bordered table-hover">
+                    <table id="table_id" class="table table-bordered table-hover">
                         <thead>
                         <tr>
                             <th>S.No</th>
                             <th>Name</th>
                             <th>Level</th>
-                            <th>Instructor</th>
+                            <th>Category</th>
                             <th>Enable or Disable</th>
                         </tr>
                         </thead>
                         <tbody>
+                        <% courses.forEach(function(course) { %>
                         <tr>
-                            <td>1</td>
-                            <td>Database</td>
-                            <td>Beginner</td>
-                            <td>Desli Mane</td>
-                            <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
+                            <td><%= counter++%></td>
+                            <td><%= course.title %></td>
+                            <td><%= course.level %></td>
+                            <td><%= course.category %></td>
+
+                            <td><input class="status" data-id="<%= course.course_id %>" type="checkbox" <%= course.course_status ? "checked" : "" %> value="<%= course.course_status %>" name="accountstatus" data-toggle="toggle" data-onstyle="success" data-offstyle="danger" ></td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Linux</td>
-                            <td>Intermediate</td>
-                            <td>Timonela Fani</td>
-                            <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Node.js</td>
-                            <td>Beginner</td>
-                            <td>Malfor Saja</td>
-                            <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>WebSocket</td>
-                            <td>Advanced</td>
-                            <td>Gentjana Muça</td>
-                            <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Objective C</td>
-                            <td>Beginner</td>
-                            <td>Anxhela Mustafa</td>
-                            <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>Java</td>
-                            <td>Beginner</td>
-                            <td>Andi Naçollari</td>
-                            <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>Swift</td>
-                            <td>Advanced</td>
-                            <td>Adelina Beqiri</td>
-                            <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Android</td>
-                            <td>Intermediate</td>
-                            <td>Elvis Deda</td>
-                            <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger"></td>
-                        </tr>
+                        <% }) %>
+
                         </tbody>
                     </table>
                 </div>
@@ -98,6 +53,34 @@
             </div>
         </div>
     </div>
+</div>
 
     <% include partials/loginModal %>
 <% include partials/footer %>
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
+
+    <script>
+        $(document).ready( function () {
+
+            $('#table_id').DataTable({
+
+                "iDisplayLength": 25
+            });
+
+            $('.status').on('change', function(e) {
+                var status = $(this).prop("checked");
+                $(this).attr('checked', status);
+                $(this).val(status);
+                console.log(status);
+                $target = $(e.target);
+                var id = $target.attr('data-id');
+                $.ajax({
+                    type:'POST',
+                    url:'/activatecourse/' + status + "/" + id,
+                    success: function (response) {
+                        console.log(response);
+                    }
+                });
+            });
+        });
+    </script>

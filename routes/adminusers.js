@@ -18,6 +18,7 @@ router.get('/adminusers', function(req, res) {
             if (err) {
                 return console.error('error runing query', err);
             }
+
             res.render('adminusers', {users: result.rows, title: 'Admin Users', counter: 1});
             console.log(result.rows);
             done();

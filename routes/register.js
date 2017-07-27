@@ -26,12 +26,6 @@ router.get('/register', function(req, res) {
 router.post('/login', function (req, res) {
 
 
-
-    // pg.connect(conString, function (err, client, done) {
-    //     if(err){
-    //         return console.error('Error in connection...', err);
-    //     }
-    // })
     // session = req.session;
     // if (req.body.email == 'm.saja@gmail.com' && req.body.pass== 'admin'){
     //     session.uniqueID = req.body.email;
